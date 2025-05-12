@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Socket.IO Test</title>
+  <!-- <script src="/socket.io/socket.io.js"></script> -->
+   <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body>
+  <h2>Socket.IO Client</h2>
+  <input id="message" placeholder="Type a message" />
+  <button onclick="sendMessage()">Send</button>
+  <p id="output"></p>
+
+  <script>
+    const socket = io();
+
+    socket.on('connect', () => {
+      console.log('Connected:', socket.id);
+    });
+
+    socket.on('notification', (data) => {
+      document.getElementById('output').innerText = 'Notification: ' + data.message;
+    });
+
+    function sendMessage() {
+      const msg = document.getElementById('message').value;
+      socket.emit('custom_event', { message: msg });
+    }
+  </script>
+</body>
+</html>
