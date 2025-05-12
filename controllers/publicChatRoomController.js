@@ -1,4 +1,4 @@
-const PublicChatRoom = require("../models/publicChatRoom");
+const PublicChatRoom = require("../models/PublicChatRoom");
 
 exports.createPublicChatRoom = async (req, res) => {
   const { userId } = req.params;

@@ -10,8 +10,8 @@ const { createServer } = require("http");
 const { Server } = require("socket.io");
 const jwt = require("jsonwebtoken");
 const User = require("./models/User");
-const PublicMessage = require("./models/publicMessage");
-const PrivateMessage = require("./models/privateMessage");
+const PublicMessage = require("./models/PublicMessage");
+const PrivateMessage = require("./models/PrivateMessage");
 
 connectDB();
 
